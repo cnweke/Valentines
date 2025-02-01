@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Val?</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20%;
+        }
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .character {
+            width: 150px;
+            margin: 20px auto;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            background-color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContent">
+        <p class="question">Hey Bobbi my baby, do you want to be my val?</p>
+        <img src="Pic1.jpg" alt="Cute character" class="character">
+        <div class="buttons">
+            <button onclick="yesResponse()">Yes</button>
+            <button id="noButton" onclick="noResponse()">No</button>
+        </div>
+    </div>
+    
+    <script>
+        function yesResponse() {
+            document.body.innerHTML = "<div class='container'><p class='question'>You Sweetheart! We'll make it special <3</p><img src='pic3.jpg' alt='Celebrating character' class='character'></div>";
+        }
+
+        function noResponse() {
+            document.getElementById("mainContent").innerHTML = `
+                <p class="question">Please be my val? :))</p>
+                <img src="pic2.jpg" alt="Cute character" class="character">
+                <div class="buttons">
+                    <button onclick="yesResponse()">Yes</button>
+                    <button onclick="yesResponse()">Yes</button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
